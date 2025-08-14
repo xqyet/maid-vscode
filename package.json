@@ -4,7 +4,7 @@
     "description": "Maid Programming Language extension for VS Code",
     "publisher": "xqyet",
     "icon": "resources/icons/maid.png",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "repository": {
     "type": "git",
     "url": "https://github.com/xqyet/MaidCode"
