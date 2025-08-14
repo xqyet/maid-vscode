@@ -1,0 +1,69 @@
+{
+    "scopeName": "source.maid",
+    "patterns": [
+      { "include": "#comments" },
+      { "include": "#strings" },
+      { "include": "#numbers" },
+      { "include": "#keywords" },
+      { "include": "#builtins" },
+      { "include": "#booleans" },
+      { "include": "#operators" },
+      { "include": "#identifiers" }
+    ],
+    "repository": {
+      "comments": {
+        "patterns": [
+          { "name": "comment.line.number-sign.maid", "match": "#.*$" }
+        ]
+      },
+      "strings": {
+        "patterns": [
+          {
+            "name": "string.quoted.double.maid",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+              { "name": "constant.character.escape.maid", "match": "\\\\." }
+            ]
+          }
+        ]
+      },
+      "numbers": {
+        "patterns": [
+          { "name": "constant.numeric.maid", "match": "\\b\\d+(?:\\.\\d+)?\\b" }
+        ]
+      },
+      "keywords": {
+        "patterns": [
+          {
+            "name": "keyword.control.maid",
+            "match": "\\b(?:if|alsoif|otherwise|while|walk|step|func|obj|fetch|give|next|leave|unsafe|safe)\\b"
+          }
+        ]
+      },
+      "booleans": {
+        "patterns": [
+          { "name": "constant.language.boolean.maid", "match": "\\b(?:true|false|null)\\b" }
+        ]
+      },
+      "operators": {
+        "patterns": [
+          { "name": "keyword.operator.logical.maid", "match": "\\b(?:and|or|not)\\b" }
+        ]
+      },
+      "builtins": {
+        "patterns": [
+          {
+            "name": "support.function.builtin.maid",
+            "match": "\\b(?:serve|process|type|isnumber|isdecimal|isstring|islist|isfunction|isbuiltin|tostring|tonumber|push|append|remove|retrieve|reverse|join|startswith|endswith|charat|clear|length|sweep|stash|uhoh|inline|rest|format|hashmap|hashmap_set|hashmap_get|hashmap_remove|hashmap_keys|hashmap_values|serve_hashmap|os_type|os_path|os_user_dir|os_env)\\b"
+          }
+        ]
+      },
+      "identifiers": {
+        "patterns": [
+          { "name": "variable.other.maid", "match": "\\b[a-zA-Z_][\\w]*\\b" }
+        ]
+      }
+    }
+  }
+  

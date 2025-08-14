@@ -1,0 +1,52 @@
+{
+    "name": "maid-lang",
+    "displayName": "Maid",
+    "description": "Maid Programming Language extension for VS Code",
+    "publisher": "xqyet",
+    "icon": "resources/icons/maid.png",
+    "version": "0.0.2",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/xqyet/MaidCode"
+    },
+    "homepage": "https://maidcode.me/",
+    "documentation": {
+    "url": "https://maidcode.me/docs/getting-started/installation"
+    },
+    "engines": { "vscode": "^1.90.0" },
+    "categories": ["Programming Languages"],
+    "activationEvents": ["onLanguage:maid", "onCommand:maid.runCurrentFile"],
+    "main": "./extension.js",
+    "contributes": {
+      "languages": [
+        {
+          "id": "maid",
+          "aliases": ["Maid", "maid"],
+          "extensions": [".maid"],
+          "configuration": "./language-configuration.json"
+        }
+      ],
+      "grammars": [
+        {
+          "language": "maid",
+          "scopeName": "source.maid",
+          "path": "./syntaxes/maid.tmLanguage.json"
+        }
+      ],
+      "commands": [
+        { "command": "maid.runCurrentFile", "title": "Maid: Run Current File" }
+      ],
+      "keybindings": [
+        { "command": "maid.runCurrentFile", "key": "ctrl+enter", "when": "editorLangId == maid" }
+      ],
+      "configuration": {
+        "type": "object",
+        "title": "Maid",
+        "properties": {
+          "maid.path": { "type": "string", "default": "maid", "description": "Path to the maid executable (from cargo install maid-lang)." },
+          "maid.args": { "type": "array", "items": { "type": "string" }, "default": [], "description": "Extra args to pass before the file path." }
+        }
+      }
+    }
+  }
+  
